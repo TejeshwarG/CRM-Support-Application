@@ -13,11 +13,12 @@ namespace CRM_Application.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        private MainWindowViewModel mainViewModel;   
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel(this);
+            mainViewModel = (MainWindowViewModel)DataContext;
         }
 
         private void chkbxEmail_Checked(object sender, RoutedEventArgs e)
@@ -29,6 +30,8 @@ namespace CRM_Application.Views
         {
             txtbxRequestEmail.IsEnabled = false;
             txtbxRequestEmail.Background = Brushes.White;
+            txtbxRequestEmail.Text = String.Empty;
+            mainViewModel.RequestEmailProperty = String.Empty;
         }
 
         private void chkbxSms_Checked(object sender, RoutedEventArgs e)
@@ -40,6 +43,8 @@ namespace CRM_Application.Views
         {
             txtbxRequestSms.IsEnabled = false;
             txtbxRequestSms.Background = Brushes.White;
+            txtbxRequestSms.Text = String.Empty;
+            mainViewModel.RequestSmsProperty = String.Empty;
         }
 
         private void chkbxPhonecall_Checked(object sender, RoutedEventArgs e)
@@ -51,8 +56,11 @@ namespace CRM_Application.Views
         {
             txtbxRequestPhonecall.IsEnabled = false;
             txtbxRequestPhonecall.Background = Brushes.White;
+            txtbxRequestPhonecall.Text = String.Empty;
+            mainViewModel.RequestPhonecallProperty = String.Empty;
         }
 
 
     }
 }
+
