@@ -1,0 +1,62 @@
+<Window x:Class="CRM_Application.Views.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+		xmlns:viewModels="clr-namespace:CRM_Application.ViewModels"
+        xmlns:converters="clr-namespace:CRM_Application.Converters"
+        Title="CRM App"
+        WindowStartupLocation="CenterScreen"
+        Height="459"
+        Width="795">
+        <Window.Resources></Window.Resources>
+    <Grid Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="80*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Name="headerGrid" Grid.Row="0">
+            <Label Name="header" FontFamily="Trebuchet MS" FontSize="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5,5,5,5" Content="CRM Support Application"></Label>
+        </Grid>
+        <Grid Name="bodyGrid" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"></ColumnDefinition>
+                <ColumnDefinition Width="40*"></ColumnDefinition>
+                <ColumnDefinition Width="30*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Name="labelCustomerEmailId" Grid.Row="0" Grid.Column="0" FontFamily="Arial" FontSize="20" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Email ID: " />
+            <TextBox Name="txtboxCustomerEmailId" Grid.Row="0" Grid.Column="1" FontSize="18" VerticalContentAlignment="Center"  Margin="5,5,5,5" Height="26" Text="{Binding Path=CustomerEmailIdProperty}"></TextBox>
+            <Label Name="labelCustomerEmailIdMessage" Grid.Row="0" Grid.Column="2" FontFamily="Verdana" FontSize="16" Foreground="Red" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="{Binding Path=CustomerEmailIdMessageProperty}" />
+            
+            <Label Name="labelCustomerPhoneNumber" Grid.Row="1" Grid.Column="0" FontFamily="Arial" FontSize="20" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Phone number: " />
+            <TextBox Name="txtboxCustomerPhoneNumber" Grid.Row="1" Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" Margin="5,5,5,5" Height="26" Text="{Binding Path=CustomerPhoneNumberProperty}"></TextBox>
+            <Label Name="labelCustomerPhoneNumberMessage" Grid.Row="1" Grid.Column="2" FontFamily="Verdana" FontSize="16" Foreground="Red" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="{Binding Path=CustomerPhoneNumberMessageProperty}" />
+
+            <Label Name="labelCustomerRequest" Grid.Row="2" Grid.Column="0" FontFamily="Arial" FontSize="20" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Send request via: " />
+            <Grid Name="gridRequest" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Name="chkbxStack" Grid.Column="0" VerticalAlignment="Center" Margin="5,5,5,5">
+                    <CheckBox Name="chkbxEmail" FontFamily="Arial" FontSize="16" Margin="5,5,5,5" IsChecked="False" Checked="chkbxEmail_Checked" Unchecked="chkbxEmail_Unchecked" Content="Email" />
+                    <CheckBox Name="chkbxSms" FontFamily="Arial" FontSize="16" Margin="5,5,5,5" IsChecked="False" Checked="chkbxSms_Checked" Unchecked="chkbxSms_Unchecked" Content="SMS" />
+                    <CheckBox Name="chkbxPhonecall" FontFamily="Arial" FontSize="16" Margin="5,5,5,5" IsChecked="False" Checked="chkbxPhonecall_Checked" Unchecked="chkbxPhonecall_Unchecked" Content="Phone Call" />
+                </StackPanel>
+                <StackPanel Name="txtbxStack" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBox Name="txtbxRequestEmail" FontFamily="Arial" FontSize="16" Margin="5,5,5,5" IsEnabled="False" Text="{Binding Path=RequestEmailProperty}"></TextBox>
+                    <TextBox Name="txtbxRequestSms" FontFamily="Arial" FontSize="16" Margin="5,5,5,5" IsEnabled="False" Text="{Binding Path=RequestSmsProperty}"></TextBox>
+                    <TextBox Name="txtbxRequestPhonecall" FontFamily="Arial" FontSize="16" Margin="5,5,5,5" IsEnabled="False" Text="{Binding Path=RequestPhonecallProperty}"></TextBox>
+                </StackPanel>
+            </Grid>
+            <Button Name="btnSubmit" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" Margin="5,5,5,5" Height="46" Width="140" Command="{Binding Path=submitCommand}" Content="Submit"></Button>
+        </Grid>
+    </Grid>
+</Window>
