@@ -1,0 +1,39 @@
+<Window x:Class="CRM_Application.Views.RequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Customer Request Details" Height="400" Width="600">
+        <Grid Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Name="Header" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Arial" FontSize="20" FontWeight="Bold"  Margin="5,5,5,5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="CUSTOMER REQUEST DETAILS"></Label>
+        
+        <Label Name="labelCustomerRequestNo" Grid.Row="1" Grid.Column="0" FontFamily="Verdana" FontSize="16" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Customer Request Number:"></Label>
+        <Label Name="labelCustomerRequestNoValue" Grid.Row="1" Grid.Column="1" FontFamily="Verdana" FontSize="16" Margin="5,5,5,5" VerticalContentAlignment="Center" ></Label>
+
+        <Label Name="labelCustomerEmailId" Grid.Row="2" Grid.Column="0" FontFamily="Verdana" FontSize="16" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Customer Email Id:"></Label>
+        <Label Name="labelCustomerEmailIdValue" Grid.Row="2" Grid.Column="1" FontFamily="Verdana" FontSize="16" Margin="5,5,5,5" VerticalContentAlignment="Center" ></Label>
+
+        <Label Name="labelCustomerPhoneNumber" Grid.Row="3" Grid.Column="0" FontFamily="Verdana" FontSize="16" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Customer Phone Number:"></Label>
+        <Label Name="labelCustomerPhoneNumberValue" Grid.Row="3" Grid.Column="1" FontFamily="Verdana" FontSize="16" Margin="5,5,5,5" VerticalContentAlignment="Center" ></Label>
+
+        <Label Name="labelCustomerReqEmailId" Grid.Row="4" Grid.Column="0" FontFamily="Verdana" FontSize="16" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Customer Request via Email Id:"></Label>
+        <Label Name="labelCustomerReqEmailIdValue" Grid.Row="4" Grid.Column="1" FontFamily="Verdana" FontSize="16" Margin="5,5,5,5" VerticalContentAlignment="Center" ></Label>
+
+        <Label Name="labelCustomerReqSms" Grid.Row="5" Grid.Column="0" FontFamily="Verdana" FontSize="16" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Customer Request via SMS:"></Label>
+        <Label Name="labelCustomerReqSmsValue" Grid.Row="5" Grid.Column="1" FontFamily="Verdana" FontSize="16" Margin="5,5,5,5" VerticalContentAlignment="Center" ></Label>
+
+        <Label Name="labelCustomerReqPhonecall" Grid.Row="6" Grid.Column="0" FontFamily="Verdana" FontSize="16" VerticalContentAlignment="Center" Margin="5,5,5,5" Content="Customer Request via Phone call:"></Label>
+        <Label Name="labelCustomerReqphonecallValue" Grid.Row="6" Grid.Column="1" FontFamily="Verdana" FontSize="16" Margin="5,5,5,5" VerticalContentAlignment="Center" ></Label>
+    </Grid>
+</Window>
